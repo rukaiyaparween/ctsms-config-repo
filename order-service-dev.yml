@@ -2,7 +2,7 @@
 spring:
   datasource: #we will use the data source to get the connection ==> url , username, 
   #password , driver class will hel[p us to connect with the specicfic databasevendor]
-    url: jdbc:mysql://localhost:3306/orderdevdb?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/orderdevdb?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
     username: newuser
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,5 +25,6 @@ logging:
     root: INFO
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
 
 
