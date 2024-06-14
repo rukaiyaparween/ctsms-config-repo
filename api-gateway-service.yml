@@ -1,1 +1,37 @@
-
+spring:
+  application:
+    name: order-service
+server:
+  port: 0
+logging:
+  level:
+    root: INFO
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  health:
+    db:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  
+info:
+  app:
+    name: My Spring Boot Application
+    description: This is a sample application to demonstrate Actuator endpoints.
+    version: 1.0.0
+  company:
+    name: My Company
+    location: USA
